@@ -9,6 +9,7 @@ function HomePage({ t }) {
       <BallotPVC t={t} />
       <JoinForm t={t} />
       <ReportBacks t={t} />
+      <Gallery t={t} />
       <DonateBand t={t} />
       <FinalCTA t={t} />
     </React.Fragment>

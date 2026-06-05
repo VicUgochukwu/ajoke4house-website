@@ -149,6 +149,37 @@
 @keyframes a4h-hero-stripe { to { background-position: -59.4px 0; } }
 @media (prefers-reduced-motion: reduce) { .lagos .hero::before { animation: none; } }
 
+/* ============================ GALLERY ================================== */
+.gallery-sec { overflow: hidden; }
+.sec-lead { font-size: var(--fs-lead, 1.12rem); line-height: 1.55; color: var(--muted, #5a5550); margin: 12px 0 0; max-width: 58ch; }
+.gallery-marquee { margin-top: 30px; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+.gallery-track { display: flex; gap: 18px; width: max-content; padding: 8px 0;
+  animation: a4h-marquee 40s linear infinite; }
+.gallery-marquee:hover .gallery-track,
+.gallery-marquee:focus-within .gallery-track { animation-play-state: paused; }
+@keyframes a4h-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.gcard { flex: 0 0 clamp(220px, 64vw, 300px); margin: 0; border-radius: var(--radius-lg, 18px);
+  overflow: hidden; background: var(--surface, #fff); border: 1px solid var(--line, #e8e3d9);
+  box-shadow: var(--shadow-sm, 0 6px 18px rgba(40,30,10,.08));
+  transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease; }
+.gcard:hover { transform: translateY(-6px); box-shadow: var(--shadow-md, 0 14px 30px rgba(40,30,10,.14)); }
+.gcard .ph { aspect-ratio: 4 / 3; border: 0; border-radius: 0;
+  background: color-mix(in srgb, var(--brand) 12%, #fff);
+  color: color-mix(in srgb, var(--brand) 65%, #444); transition: transform .6s cubic-bezier(.22,1,.36,1); }
+.gcard:hover .ph { transform: scale(1.07); }
+.gcard-cap { display: flex; align-items: center; gap: 9px; padding: 11px 13px;
+  font-size: 13.5px; font-weight: 600; color: var(--ink-900, #1d1d1d); }
+.gcap-tag { font-size: 10.5px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 999px; background: var(--brand); color: var(--on-brand, #fff); white-space: nowrap; }
+.lagos .gcard { border: 2px solid var(--ink-900, #111); border-radius: 14px; box-shadow: 5px 5px 0 var(--ink-900, #111); }
+.lagos .gcard:hover { box-shadow: 8px 8px 0 var(--ink-900, #111); }
+@media (prefers-reduced-motion: reduce) {
+  .gallery-track { animation: none; }
+  .gallery-marquee { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
 /* ============================ PILLARS =================================== */
 .pillars { display: grid; gap: 16px; margin-top: 28px; }
 @media (min-width: 760px) { .pillars { grid-template-columns: repeat(3,1fr); } }
