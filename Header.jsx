@@ -17,6 +17,17 @@ function Header({ t, lang, setLang }) {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+  // Lock background scroll while the mobile menu is open (prevents scroll-bleed/"mangle").
+  React.useEffect(() => {
+    if (!open) return;
+    const y = window.scrollY;
+    const b = document.body;
+    b.style.position = "fixed"; b.style.top = `-${y}px`; b.style.left = "0"; b.style.right = "0"; b.style.width = "100%";
+    return () => {
+      b.style.position = ""; b.style.top = ""; b.style.left = ""; b.style.right = ""; b.style.width = "";
+      window.scrollTo(0, y);
+    };
+  }, [open]);
   const nav = t.nav;
   const links = [
     ["/", nav.home], ["/meet", nav.meet], ["/priorities", nav.priorities],
