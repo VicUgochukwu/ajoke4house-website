@@ -8,8 +8,8 @@
 .page-header.brand .lead { color: color-mix(in srgb, var(--hero-fg) 82%, transparent); }
 .page-header.brand .eyebrow { color: color-mix(in srgb, var(--hero-fg) 85%, transparent); }
 .lagos .page-header.brand .eyebrow { color: var(--accent); }
-.page-header-in { padding: 30px 0 38px; }
-@media (min-width: 768px) { .page-header-in { padding: 46px 0 52px; } }
+.page-header-in { padding-top: 30px; padding-bottom: 38px; }
+@media (min-width: 768px) { .page-header-in { padding-top: 46px; padding-bottom: 52px; } }
 .page-header .display { margin-top: 12px; }
 .page-header.brand .display { color: var(--hero-fg); }
 .page-header .lead { margin-top: 14px; max-width: 56ch; }
@@ -164,7 +164,7 @@
 
 /* Phones: roomier hero, full-width stacked CTAs (cleaner tap targets), smaller logo. */
 @media (max-width: 600px) {
-  .hero-in { padding: 30px 0 42px; }
+  .hero-in { padding-top: 30px; padding-bottom: 42px; }
   .hero-sub { max-width: none; }
   .hero-cta, .band-cta { flex-direction: column; align-items: stretch; }
   .hero-cta > a, .hero-cta .btn, .band-cta > a, .band-cta .btn { width: 100%; }
