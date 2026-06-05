@@ -1,22 +1,6 @@
-/* Ajoke4House — multi-page app shell. Hash router + theme (B/C) + language. */
-
-const THEMES = [
-  { key: "lagos", label: "Lagos Vernacular", cls: "ts-lagos" },
-  { key: "accountable", label: "The Accountable", cls: "ts-accountable" },
-];
-
-function ThemeSwitch({ theme, setTheme }) {
-  return (
-    <div className="theme-switch" role="group" aria-label="Brand direction">
-      <div className="ts-label">Soul</div>
-      {THEMES.map((th) => (
-        <button key={th.key} className={`${th.cls} ${theme === th.key ? "on" : ""}`}
-          title={th.label} aria-label={th.label} aria-pressed={theme === th.key}
-          onClick={() => setTheme(th.key)} />
-      ))}
-    </div>
-  );
-}
+/* Ajoke4House — app shell. Hash router + language.
+   PUBLIC THEME IS LOCKED to Lagos Vernacular (chosen 2026-06-05).
+   ?theme=movement|accountable remains available for internal review only. */
 
 function Router({ t }) {
   const path = useRoute();
@@ -38,19 +22,14 @@ function Router({ t }) {
 function App() {
   const params = new URLSearchParams(location.search);
   const forced = params.get("theme");
-  const noChrome = params.get("chrome") === "0";
-  const valid = ["movement", "lagos", "accountable"];
-  const [theme, setTheme] = React.useState(() =>
-    (forced && valid.includes(forced)) ? forced : (localStorage.getItem("a4h-theme") || "lagos"));
+  const theme = (forced === "movement" || forced === "accountable") ? forced : "lagos";
   const [lang, setLang] = React.useState(() => params.get("lang") || localStorage.getItem("a4h-lang") || "en");
-  React.useEffect(() => { if (!forced) localStorage.setItem("a4h-theme", theme); }, [theme]);
   React.useEffect(() => { if (!params.get("lang")) localStorage.setItem("a4h-lang", lang); }, [lang]);
   const t = window.STRINGS[lang];
   window.__a4hTheme = theme;
 
   return (
     <div className={`a4h-app ${theme}`} data-theme={theme}>
-      {!noChrome && <ThemeSwitch theme={theme} setTheme={setTheme} />}
       <Header t={t} lang={lang} setLang={setLang} />
       <main><Router t={t} /></main>
       <Footer t={t} lang={lang} setLang={setLang} />
