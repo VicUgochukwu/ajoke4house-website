@@ -166,6 +166,7 @@
 @media (max-width: 600px) {
   .hero-in { padding-top: 30px; padding-bottom: 42px; }
   .hero-sub { max-width: none; }
+  .hero-photo { aspect-ratio: 4 / 3; }   /* compact hero image on phones so the CTAs sit higher */
   .hero-cta, .band-cta { flex-direction: column; align-items: stretch; }
   .hero-cta > a, .hero-cta .btn, .band-cta > a, .band-cta .btn { width: 100%; }
   .hero-cta .btn, .band-cta .btn { white-space: normal; }   /* let the long "Join Ajoke4House 2027 Campaign" wrap rather than overflow */
@@ -199,3 +200,18 @@
   .hdr-nav a:hover::after { transform: scaleX(1); }
   .lagos .hdr-nav a::after { background: var(--accent); }
 }
+
+/* ---- Lagos: the signature 3-colour Ankara stripe caps the colour bands + footer
+   (same ink/magenta/teal motif as the hero, so it reads as one cohesive language) ---- */
+.lagos .band-donate, .lagos .band-final, .lagos .foot { position: relative; }
+.lagos .band-donate::before, .lagos .band-final::before, .lagos .foot::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 12px; z-index: 1;
+  background: repeating-linear-gradient(45deg, var(--ink-900) 0 12px, var(--accent) 12px 24px, var(--accent-2, #00A3A3) 24px 36px);
+}
+
+/* Lagos: make the Triple-A pillars distinct + high-contrast (the middle card was
+   low-contrast white-on-gold). Now: yellow / ink / magenta — Accessible / Accountable / In Action. */
+.lagos .pillar-2 { background: var(--ink-900); color: #fff; }
+
+/* Lagos: give the stat + report-back cards the same poster treatment as every other card */
+.lagos .stat, .lagos .update { border: 2px solid var(--ink-900); box-shadow: 3px 3px 0 var(--ink-900); }
