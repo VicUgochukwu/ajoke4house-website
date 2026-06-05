@@ -15,7 +15,9 @@ function DonatePage({ t }) {
               <Reveal key={i} delay={i * 70} className="tier">
                 <div className="amt">{tier.a}</div>
                 <p>{tier.d}</p>
-                <div style={{ marginTop: 14 }}><Btn variant="primary" className="btn-block" icon="heart">{d.cta}</Btn></div>
+                <div style={{ marginTop: 14 }}>{((window.A4H || {}).donateUrl)
+                  ? <a href={window.A4H.donateUrl} target="_blank" rel="noopener"><Btn variant="primary" className="btn-block" icon="heart">{d.cta}</Btn></a>
+                  : <Btn variant="primary" className="btn-block" icon="heart" disabled aria-disabled="true" title="Online giving opens soon" style={{ opacity: 0.55, cursor: "not-allowed" }}>{d.cta}</Btn>}</div>
               </Reveal>
             ))}
           </div>

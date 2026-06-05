@@ -16,11 +16,15 @@ function Icon({ name, size = 20, stroke = 2, className = "", color }) {
   return <span ref={ref} className={className} style={{ display: "inline-flex", color }} aria-hidden="true" />;
 }
 
-function Btn({ variant = "primary", size, icon, iconRight, pulse, className = "", children, ...rest }) {
+function Btn({ variant = "primary", size, icon, iconRight, pulse, className = "", children, onClick, ...rest }) {
   const cls = ["btn", `btn-${variant}`, size === "lg" ? "btn-lg" : "", pulse ? "pulse" : "", className]
     .filter(Boolean).join(" ");
+  // WhatsApp-variant buttons open the campaign WhatsApp link by default (unless given an explicit onClick).
+  const handleClick = onClick || (variant === "wa"
+    ? () => { const u = (window.A4H || {}).whatsapp; if (u) window.open(u, "_blank", "noopener"); }
+    : undefined);
   return (
-    <button className={cls} {...rest}>
+    <button className={cls} onClick={handleClick} {...rest}>
       {icon && <Icon name={icon} size={size === "lg" ? 20 : 18} />}
       {children}
       {iconRight && <Icon name={iconRight} size={size === "lg" ? 20 : 18} />}

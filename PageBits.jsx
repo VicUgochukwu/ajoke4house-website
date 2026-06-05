@@ -24,7 +24,7 @@ function PageCTA({ t }) {
         <Reveal delay={140}>
           <div className="band-cta">
             <A href="/pvc"><Btn variant="accent" size="lg" icon="id-card">{t.cta.pvc}</Btn></A>
-            <A href="/involved"><Btn variant="wa" size="lg" icon="message-circle" pulse>{t.cta.join}</Btn></A>
+            <A href="/involved"><Btn variant="wa" size="lg" icon="user-plus" onClick={() => {}}>{t.cta.join}</Btn></A>
           </div>
         </Reveal>
       </div>

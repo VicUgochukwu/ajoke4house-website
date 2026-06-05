@@ -7,7 +7,7 @@ const STRINGS = {
     nav: { home: "Home", meet: "Meet Adejoke", priorities: "Priorities", pvc: "Get Your PVC", involved: "Get Involved", news: "News", donate: "Donate" },
     cta: { joinCampaign: "Join Ajoke4House 2027 Campaign", joinShort: "Join 2027", pvc: "Get Your PVC", meet: "Meet Adejoke", whatsapp: "Chat on WhatsApp", join: "Count me in", support: "Support Ajoke", story: "Read her story", howpvc: "How to get your PVC", wagroup: "Join your ward's WhatsApp group" },
     bar: { pvc: "Get PVC", whatsapp: "WhatsApp", join: "Join" },
-    hero: { eyebrow: "Ikorodu Constituency II · 2027", title: "A new standard for Ikorodu II.", sub: "Adejoke Aderemi-Adewole — Accessible. Accountable. In Action.", trust: "Official campaign · verified", photo: "Photo: Adejoke with traders at Ikorodu market" },
+    hero: { eyebrow: "Lagos State House of Assembly · Ikorodu II · 2027", title: "A new standard for Ikorodu II.", sub: "Adejoke Aderemi-Adewole — Accessible. Accountable. In Action.", trust: "Official campaign · verified", photo: "Photo: Adejoke with traders at Ikorodu market" },
     promise: { eyebrow: "The Triple-A Promise", title: "Triple-A representation for Ikorodu II." },
     pillars: [
       { t: "Accessible", d: "Here all year — not just at election time.", icon: "hand-heart" },
@@ -56,7 +56,7 @@ const STRINGS = {
     nav: { home: "Ilé", meet: "Pàdé Adejoke", priorities: "Àwọn Ohun Pàtàkì", pvc: "Gba Káàdì Ìdìbò", involved: "Kópa", news: "Ìròyìn", donate: "Ṣèrànwọ́" },
     cta: { joinCampaign: "Dárapọ̀ mọ́ Ìpolongo Ajoke4House 2027", joinShort: "Dárapọ̀ 2027", pvc: "Gba Káàdì Ìdìbò Rẹ", meet: "Pàdé Adejoke", whatsapp: "Bá wa sọ̀rọ̀ lórí WhatsApp", join: "Kà mí mọ́", support: "Ṣètìlẹ́yìn Ajoke", story: "Ka ìtàn rẹ̀", howpvc: "Bí o ṣe lè gba Káàdì Ìdìbò", wagroup: "Dárapọ̀ mọ́ ẹgbẹ́ WhatsApp ward rẹ" },
     bar: { pvc: "Káàdì Ìdìbò", whatsapp: "WhatsApp", join: "Dárapọ̀" },
-    hero: { eyebrow: "Ikorodu Constituency II · 2027", title: "Ìpele tuntun fún Ikorodu II.", sub: "Adejoke Aderemi-Adewole — Wíwọlé. Jíjẹ́rìí. Ní Ìṣe.", trust: "Ìpolongo òṣìṣẹ́ · àfọwọ́sí", photo: "Àwòrán: Adejoke pẹ̀lú àwọn oníṣòwò ní ọjà Ikorodu" },
+    hero: { eyebrow: "Ilé Aṣòfin Ìpínlẹ̀ Èkó · Ikorodu II · 2027", title: "Ìpele tuntun fún Ikorodu II.", sub: "Adejoke Aderemi-Adewole — Wíwọlé. Jíjẹ́rìí. Ní Ìṣe.", trust: "Ìpolongo òṣìṣẹ́ · àfọwọ́sí", photo: "Àwòrán: Adejoke pẹ̀lú àwọn oníṣòwò ní ọjà Ikorodu" },
     promise: { eyebrow: "Ìlérí Triple-A", title: "Aṣojú Triple-A fún Ikorodu II." },
     pillars: [
       { t: "Wíwọlé", d: "Wà níbí ní gbogbo ọdún — kì í ṣe ìgbà ìdìbò nìkan.", icon: "hand-heart" },
