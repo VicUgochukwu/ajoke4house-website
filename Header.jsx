@@ -45,6 +45,7 @@ function Header({ t, lang, setLang }) {
           {links.map(([href, label]) => <A key={href} href={href} onClick={() => setOpen(false)}>{label}</A>)}
           <A href="/involved" onClick={() => setOpen(false)}><Btn variant="primary" icon="user-plus" className="btn-block" style={{ marginTop: 14 }}>{t.cta.joinCampaign}</Btn></A>
           <Btn variant="wa" icon="message-circle" pulse className="btn-block" style={{ marginTop: 10 }}>{t.cta.whatsapp}</Btn>
+          <div className="sheet-lang"><span>{t.foot.lang}</span><LangToggle lang={lang} setLang={setLang} /></div>
         </div>
       </div>
     </header>

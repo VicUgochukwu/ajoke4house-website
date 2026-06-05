@@ -1,5 +1,6 @@
 /* Ajoke4House — Gallery: an auto-scrolling marquee of campaign moments.
-   Photo slots are labelled Placeholders until the campaign supplies real images. */
+   Photo slots are labelled Placeholders until the campaign supplies real images.
+   NOTE: cards use .gphoto (the .gcard class is owned by inner-page cards). */
 
 function Gallery({ t }) {
   const g = t.gallery;
@@ -16,14 +17,14 @@ function Gallery({ t }) {
           <div className="gallery-track">
             {loop.map((it, i) => (
               <figure
-                className="gcard"
+                className="gphoto"
                 key={i}
                 role={i < g.items.length ? "listitem" : undefined}
                 aria-hidden={i >= g.items.length ? "true" : undefined}
               >
                 <Placeholder label={it.label} icon="camera" />
-                <figcaption className="gcard-cap">
-                  <span className="gcap-tag">{it.tag}</span>
+                <figcaption className="gphoto-cap">
+                  <span className="gphoto-tag">{it.tag}</span>
                   {it.cap}
                 </figcaption>
               </figure>

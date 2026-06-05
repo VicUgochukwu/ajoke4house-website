@@ -60,7 +60,7 @@
 .btn-wa { background: var(--whatsapp); color: #0A3D2C; }
 .btn-wa:hover { background: #1FBE5C; }
 .btn-lg { min-height: 54px; padding: 0 28px; font-size: 17px; }
-.btn-block { width: 100%; }
+.btn-block { width: 100%; white-space: normal; }
 
 /* WhatsApp gentle pulse */
 .btn-wa.pulse { position: relative; }
@@ -78,7 +78,9 @@
 .mark img { height: 34px; width: auto; }
 .lagos .mark-name { color: #111111; }
 .mark-name { font-family: var(--display-family); font-weight: var(--display-weight); font-size: 19px;
-  letter-spacing: var(--display-tracking); color: var(--brand); text-transform: var(--display-transform); }
+  letter-spacing: var(--display-tracking); color: var(--brand); text-transform: var(--display-transform); white-space: nowrap; }
+.hdr-in > a:first-child { min-width: 0; flex: 0 1 auto; }
+.hdr-in .mark { min-width: 0; }
 .mark-name b { color: var(--accent-strong); }
 
 /* ---- Icon chip ---------------------------------------------------------- */
@@ -88,7 +90,7 @@
 .accountable .ichip { background: var(--accent-soft); color: var(--accent-strong); }
 
 /* ============================ HEADER ===================================== */
-.hdr { position: sticky; top: 0; z-index: 60; background: var(--bg);
+.hdr { position: sticky; top: 0; z-index: 100; background: var(--bg);
   border-bottom: 1px solid transparent; transition: box-shadow var(--dur-base), border-color var(--dur-base), padding var(--dur-base); }
 .hdr.scrolled { box-shadow: var(--shadow-sm); border-color: var(--line);
   background: color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter: blur(10px); }
@@ -100,12 +102,14 @@
 .hdr-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
 .hdr-cta { display: none; }
 .lang { display: inline-flex; border: 1.5px solid var(--line-strong); border-radius: var(--radius-pill); overflow: hidden; }
+.hdr-right .lang { display: none; }   /* on mobile, language lives in the menu sheet (prevents logo/toggle overlap) */
 .lang button { border: 0; background: transparent; padding: 6px 12px; font-size: 13px; font-weight: 700; color: var(--fg-muted); }
 .lang button.on { background: var(--brand); color: var(--on-brand); }
 .burger { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center;
   border: 0; background: transparent; color: var(--fg); border-radius: var(--radius-sm); }
 @media (min-width: 940px) {
   .hdr-nav { display: flex; } .hdr-cta { display: inline-flex; } .burger { display: none; }
+  .hdr-right .lang { display: inline-flex; }
 }
 /* mobile menu sheet */
 .sheet { position: fixed; inset: 0; z-index: 90; background: rgba(20,32,26,.4); opacity: 0; pointer-events: none; transition: opacity var(--dur-base); }
@@ -150,31 +154,33 @@
 @media (prefers-reduced-motion: reduce) { .lagos .hero::before { animation: none; } }
 
 /* ============================ GALLERY ================================== */
+/* NOTE: photo cards use .gphoto (NOT .gcard — that name is taken by inner-page cards in pages.css) */
 .gallery-sec { overflow: hidden; }
-.sec-lead { font-size: var(--fs-lead, 1.12rem); line-height: 1.55; color: var(--muted, #5a5550); margin: 12px 0 0; max-width: 58ch; }
-.gallery-marquee { margin-top: 30px; overflow: hidden;
+.sec-lead { font-size: var(--fs-lead); line-height: 1.55; color: var(--fg-muted); margin: 12px 0 0; max-width: 58ch; }
+.gallery-marquee { margin-top: 28px; overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
-.gallery-track { display: flex; gap: 18px; width: max-content; padding: 8px 0;
-  animation: a4h-marquee 40s linear infinite; }
+.gallery-track { display: flex; gap: 16px; width: max-content; padding: 8px 0;
+  animation: a4h-marquee 42s linear infinite; }
 .gallery-marquee:hover .gallery-track,
 .gallery-marquee:focus-within .gallery-track { animation-play-state: paused; }
 @keyframes a4h-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.gcard { flex: 0 0 clamp(220px, 64vw, 300px); margin: 0; border-radius: var(--radius-lg, 18px);
-  overflow: hidden; background: var(--surface, #fff); border: 1px solid var(--line, #e8e3d9);
-  box-shadow: var(--shadow-sm, 0 6px 18px rgba(40,30,10,.08));
-  transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease; }
-.gcard:hover { transform: translateY(-6px); box-shadow: var(--shadow-md, 0 14px 30px rgba(40,30,10,.14)); }
-.gcard .ph { aspect-ratio: 4 / 3; border: 0; border-radius: 0;
-  background: color-mix(in srgb, var(--brand) 12%, #fff);
-  color: color-mix(in srgb, var(--brand) 65%, #444); transition: transform .6s cubic-bezier(.22,1,.36,1); }
-.gcard:hover .ph { transform: scale(1.07); }
-.gcard-cap { display: flex; align-items: center; gap: 9px; padding: 11px 13px;
-  font-size: 13.5px; font-weight: 600; color: var(--ink-900, #1d1d1d); }
-.gcap-tag { font-size: 10.5px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
-  padding: 3px 9px; border-radius: 999px; background: var(--brand); color: var(--on-brand, #fff); white-space: nowrap; }
-.lagos .gcard { border: 2px solid var(--ink-900, #111); border-radius: 14px; box-shadow: 5px 5px 0 var(--ink-900, #111); }
-.lagos .gcard:hover { box-shadow: 8px 8px 0 var(--ink-900, #111); }
+.gphoto { flex: 0 0 clamp(208px, 68vw, 280px); margin: 0; border-radius: var(--radius-lg);
+  overflow: hidden; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-sm);
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
+.gphoto .ph { aspect-ratio: 4 / 3; border: 0; border-radius: 0;
+  background: color-mix(in srgb, var(--brand) 12%, var(--surface));
+  color: color-mix(in srgb, var(--brand) 64%, var(--fg)); transition: transform .6s var(--ease-out); }
+.gphoto-cap { display: flex; align-items: center; gap: 9px; padding: 11px 13px;
+  font-size: 13.5px; font-weight: 600; color: var(--fg); }
+.gphoto-tag { font-size: 10.5px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
+  padding: 3px 9px; border-radius: var(--radius-pill); background: var(--brand); color: var(--on-brand); white-space: nowrap; }
+.lagos .gphoto { border: 2px solid var(--ink-900); border-radius: 14px; box-shadow: 5px 5px 0 var(--ink-900); }
+@media (hover: hover) {
+  .gphoto:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+  .gphoto:hover .ph { transform: scale(1.07); }
+  .lagos .gphoto:hover { box-shadow: 8px 8px 0 var(--ink-900); }
+}
 @media (prefers-reduced-motion: reduce) {
   .gallery-track { animation: none; }
   .gallery-marquee { overflow-x: auto; -webkit-overflow-scrolling: touch; }

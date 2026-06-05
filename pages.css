@@ -144,3 +144,58 @@
 .lagos .hdr-nav a:hover,
 .lagos .foot a:hover,
 .lagos .crumb:hover { color: var(--accent); }
+
+/* ============================================================================
+   POLISH PASS — mobile sizing, breathing room, and tasteful motion.
+   Loaded last so these rules win cleanly over kit.css / pages.css above.
+   ============================================================================ */
+
+/* Lagos rides the wide Bungee poster face — scale its big type down on phones
+   so the hero and section headings stop crushing on narrow screens. */
+.lagos .display { font-size: clamp(1.7rem, 4.4vw + 0.4rem, 3.7rem); letter-spacing: 0; }
+.lagos .h2 { font-size: clamp(1.3rem, 2.6vw + 0.45rem, 2.05rem); }
+.lagos .page-header .display { font-size: clamp(1.7rem, 4.4vw + 0.4rem, 3.35rem); }
+
+/* language switch inside the mobile menu sheet */
+.sheet-lang { display: flex; align-items: center; justify-content: space-between;
+  margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+.sheet-lang span { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--fg-subtle); }
+.sheet-lang .lang { display: inline-flex; }
+
+/* Phones: roomier hero, full-width stacked CTAs (cleaner tap targets), smaller logo. */
+@media (max-width: 600px) {
+  .hero-in { padding: 30px 0 42px; }
+  .hero-sub { max-width: none; }
+  .hero-cta, .band-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta > a, .hero-cta .btn, .band-cta > a, .band-cta .btn { width: 100%; }
+  .hero-cta .btn, .band-cta .btn { white-space: normal; }   /* let the long "Join Ajoke4House 2027 Campaign" wrap rather than overflow */
+  .mark img { height: 30px; }
+  .mark-name { font-size: 17px; }
+  .section { padding: 48px 0; }
+}
+
+/* Gentle, looping float on the hero AAA-peaks watermark. */
+.hero-peaks { animation: a4h-float 7s ease-in-out infinite alternate; will-change: transform; }
+@keyframes a4h-float { from { transform: translateY(0) rotate(0); } to { transform: translateY(-16px) rotate(-1.5deg); } }
+
+/* Hover affordances — only on devices with a real pointer, so touch screens
+   never get stuck in a hover state. */
+@media (hover: hover) {
+  .pillar { transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
+  .pillar:hover { transform: translateY(-5px); }
+  .lagos .pillar:hover { transform: translate(-2px, -3px); box-shadow: 7px 7px 0 var(--ink-900, #111); }
+
+  .update, .ccard, .tier, .bigstep, .cardgrid .gcard {
+    transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
+  .update:hover, .ccard:hover, .tier:hover, .bigstep:hover, .cardgrid .gcard:hover {
+    transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .lagos .update:hover, .lagos .ccard:hover, .lagos .tier:hover, .lagos .bigstep:hover, .lagos .cardgrid .gcard:hover {
+    transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink-900, #111); }
+
+  .hdr-nav a { position: relative; }
+  .hdr-nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px;
+    background: var(--brand); border-radius: 2px; transform: scaleX(0); transform-origin: left;
+    transition: transform var(--dur-base) var(--ease-out); }
+  .hdr-nav a:hover::after { transform: scaleX(1); }
+  .lagos .hdr-nav a::after { background: var(--accent); }
+}
