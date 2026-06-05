@@ -201,13 +201,8 @@
   .lagos .hdr-nav a::after { background: var(--accent); }
 }
 
-/* ---- Lagos: the signature 3-colour Ankara stripe caps the colour bands + footer
-   (same ink/magenta/teal motif as the hero, so it reads as one cohesive language) ---- */
-.lagos .band-donate, .lagos .band-final, .lagos .foot { position: relative; }
-.lagos .band-donate::before, .lagos .band-final::before, .lagos .foot::before {
-  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 12px; z-index: 1;
-  background: repeating-linear-gradient(45deg, var(--ink-900) 0 12px, var(--accent) 12px 24px, var(--accent-2, #00A3A3) 24px 36px);
-}
+/* (Ankara stripe on the donate/final bands + footer removed by request — the diagonal
+   stripe now lives only on the hero, where it started, via .lagos .hero::before in kit.css.) */
 
 /* Lagos: make the Triple-A pillars distinct + high-contrast (the middle card was
    low-contrast white-on-gold). Now: yellow / ink / magenta — Accessible / Accountable / In Action. */
