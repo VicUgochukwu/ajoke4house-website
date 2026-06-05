@@ -1,0 +1,88 @@
+/* Ajoke4House — bilingual sample copy (EN / Yoruba).
+   NOTE: Yoruba strings are best-effort sample translations for the toggle demo;
+   the campaign should have them reviewed by a native speaker before production. */
+
+const STRINGS = {
+  en: {
+    nav: { home: "Home", meet: "Meet Adejoke", priorities: "Priorities", pvc: "Get Your PVC", involved: "Get Involved", news: "News", donate: "Donate" },
+    cta: { joinCampaign: "Join Ajoke4House 2027 Campaign", joinShort: "Join 2027", pvc: "Get Your PVC", meet: "Meet Adejoke", whatsapp: "Chat on WhatsApp", join: "Count me in", support: "Support Ajoke", story: "Read her story", howpvc: "How to get your PVC", wagroup: "Join your ward's WhatsApp group" },
+    bar: { pvc: "Get PVC", whatsapp: "WhatsApp", join: "Join" },
+    hero: { eyebrow: "Ikorodu Constituency II · 2027", title: "A new standard for Ikorodu II.", sub: "Adejoke Aderemi-Adewole — Accessible. Accountable. In Action.", trust: "Official campaign · verified", photo: "Photo: Adejoke with traders at Ikorodu market" },
+    promise: { eyebrow: "The Triple-A Promise", title: "Triple-A representation for Ikorodu II." },
+    pillars: [
+      { t: "Accessible", d: "Here all year — not just at election time.", icon: "hand-heart" },
+      { t: "Accountable", d: "Promises in writing. Regular report-backs.", icon: "clipboard-check" },
+      { t: "In Action", d: "Taking Ikorodu's priorities — roads, drainage, water, jobs — to the Assembly.", icon: "zap" },
+    ],
+    meet: { eyebrow: "Meet Adejoke", title: "A daughter of Ikorodu.", body: "Born here, lives here, will work here. A first-time candidate stepping up because Ikorodu II deserves a representative who shows up — in Imota, Igbogbo-Baiyeku and Ijede — all year round.", photo: "Photo: Adejoke, portrait" },
+    prio: { eyebrow: "Her Priorities", title: "Priorities for Ikorodu II.",
+      items: [
+        { t: "Roads & drainage", d: "Passable roads and drains that don't flood.", icon: "route" },
+        { t: "Youth jobs & skills", d: "Skills, apprenticeships and real opportunity.", icon: "briefcase" },
+        { t: "Water & basic services", d: "Clean water and services that work.", icon: "droplet" },
+        { t: "Health & schools", d: "Closer clinics, better classrooms.", icon: "heart-pulse" },
+        { t: "Markets & transport", d: "Support for traders, artisans and commuters.", icon: "store" },
+        { t: "Accountable representation", d: "A voice present and answerable to you.", icon: "scale" },
+      ] },
+    ballot: { eyebrow: "Get Your PVC · Ballot literacy", title: "Find Ajoke on the ballot.", lead: "Your PVC is your power. Here's how to get ready — and how to find Adejoke on election day.",
+      steps: ["Register or transfer your PVC during INEC's CVR window.", "Collect your card at your local INEC office before the deadline.", "On election day, look for the NDC logo and Adejoke Aderemi-Adewole.", "Thumb-print beside her name. Done."],
+      look: "Look for", party: "NDC · Adejoke Aderemi-Adewole", logo: "Placeholder: official NDC party logo", thumb: "Thumb-print here" },
+    join: { title: "Join the movement — it takes 30 seconds.", sub: "Your details go straight to your ward team. No record is kept without your consent.",
+      name: "Name", phone: "Phone", ward: "Your ward", wardph: "Select your ward",
+      consent: "I agree to be contacted by phone or WhatsApp about voter education, PVC help, and election reminders.",
+      ok: "You're in. Welcome to the movement!", okSub: "Your ward team will reach out on WhatsApp soon." },
+    report: { eyebrow: "Report-backs", title: "Proof, not promises.",
+      stats: [ { n: 8, suf: "", cap: "Wards" }, { n: 1240, suf: "+", cap: "PVCs helped" }, { n: 320, suf: "+", cap: "Volunteers" } ],
+      updates: [
+        { tag: "Listening visit", t: "Town hall with Imota market women on drainage." },
+        { tag: "Commitment", t: "Published our first 90-day accountability pledge." },
+        { tag: "Ward group", t: "Igbogbo-Baiyeku WhatsApp groups now live." },
+      ] },
+    donate: { title: "Power a people-funded campaign.", sub: "We earn votes — we don't buy them. Every naira is accountable, within the lawful cap." },
+    final: { title: "Our community, our voice, our House.", sub: "Get your PVC. Join your ward. Let's bring Triple-A representation to Ikorodu II." },
+    foot: { tagline: "Accessible. Accountable. In Action.", contact: "Contact", office: "Constituency office, Ikorodu II", links: "Campaign", legal: "Privacy & Consent",
+      note: "INEC alone registers voters; the campaign only assists. We never collect PVC or VIN numbers online. Paid for by the Ajoke4House campaign. · ajokeadremi.com", lang: "Language" },
+  },
+  yo: {
+    nav: { home: "Ilé", meet: "Pàdé Adejoke", priorities: "Àwọn Ohun Pàtàkì", pvc: "Gba Káàdì Ìdìbò", involved: "Kópa", news: "Ìròyìn", donate: "Ṣèrànwọ́" },
+    cta: { joinCampaign: "Dárapọ̀ mọ́ Ìpolongo Ajoke4House 2027", joinShort: "Dárapọ̀ 2027", pvc: "Gba Káàdì Ìdìbò Rẹ", meet: "Pàdé Adejoke", whatsapp: "Bá wa sọ̀rọ̀ lórí WhatsApp", join: "Kà mí mọ́", support: "Ṣètìlẹ́yìn Ajoke", story: "Ka ìtàn rẹ̀", howpvc: "Bí o ṣe lè gba Káàdì Ìdìbò", wagroup: "Dárapọ̀ mọ́ ẹgbẹ́ WhatsApp ward rẹ" },
+    bar: { pvc: "Káàdì Ìdìbò", whatsapp: "WhatsApp", join: "Dárapọ̀" },
+    hero: { eyebrow: "Ikorodu Constituency II · 2027", title: "Ìpele tuntun fún Ikorodu II.", sub: "Adejoke Aderemi-Adewole — Wíwọlé. Jíjẹ́rìí. Ní Ìṣe.", trust: "Ìpolongo òṣìṣẹ́ · àfọwọ́sí", photo: "Àwòrán: Adejoke pẹ̀lú àwọn oníṣòwò ní ọjà Ikorodu" },
+    promise: { eyebrow: "Ìlérí Triple-A", title: "Aṣojú Triple-A fún Ikorodu II." },
+    pillars: [
+      { t: "Wíwọlé", d: "Wà níbí ní gbogbo ọdún — kì í ṣe ìgbà ìdìbò nìkan.", icon: "hand-heart" },
+      { t: "Jíjẹ́rìí", d: "Ìlérí ní ìkọsílẹ̀. Ìròyìn déédéé.", icon: "clipboard-check" },
+      { t: "Ní Ìṣe", d: "Gbé àwọn ohun pàtàkì Ikorodu — ọ̀nà, ìṣàn omi, omi, iṣẹ́ — lọ sí Àpéjọ.", icon: "zap" },
+    ],
+    meet: { eyebrow: "Pàdé Adejoke", title: "Ọmọbìnrin Ikorodu.", body: "A bí i níbí, ó ń gbé níbí, yóò sì ṣiṣẹ́ níbí. Olùdíje àkọ́kọ́ tó dìde nítorí pé Ikorodu II tọ́ sí aṣojú tó ń farahàn — ní Imota, Igbogbo-Baiyeku àti Ijede — ní gbogbo ọdún.", photo: "Àwòrán: Adejoke, àwòrán ojú" },
+    prio: { eyebrow: "Àwọn Ohun Pàtàkì Rẹ̀", title: "Àwọn ohun pàtàkì fún Ikorodu II.",
+      items: [
+        { t: "Ọ̀nà àti ìṣàn omi", d: "Ọ̀nà tó dára àti ìṣàn omi tí kì í kún.", icon: "route" },
+        { t: "Iṣẹ́ àti ọgbọ́n fún ọ̀dọ́", d: "Ọgbọ́n, ẹ̀kọ́ iṣẹ́-ọnà àti àǹfààní gidi.", icon: "briefcase" },
+        { t: "Omi àti iṣẹ́ ìpìlẹ̀", d: "Omi mímọ́ àti iṣẹ́ tó ń ṣiṣẹ́.", icon: "droplet" },
+        { t: "Ìlera àti ilé-ìwé", d: "Ilé-ìwòsàn tó súnmọ́, kíláàsì tó dára.", icon: "heart-pulse" },
+        { t: "Ọjà àti ọkọ̀", d: "Ìtìlẹ́yìn fún oníṣòwò, oníṣẹ́-ọnà àti arìnrìn-àjò.", icon: "store" },
+        { t: "Aṣojú tó jẹ́rìí", d: "Ohùn tó wà tó sì jíhìn fún ọ.", icon: "scale" },
+      ] },
+    ballot: { eyebrow: "Gba Káàdì Ìdìbò · Ìmọ̀ ìdìbò", title: "Wá Ajoke lórí ìwé ìdìbò.", lead: "Káàdì Ìdìbò rẹ ni agbára rẹ. Báyìí ni o ṣe lè múra — àti bí o ṣe lè wá Adejoke ní ọjọ́ ìdìbò.",
+      steps: ["Forúkọsílẹ̀ tàbí gbé Káàdì Ìdìbò rẹ pa dà ní àkókò CVR ti INEC.", "Gba káàdì rẹ ní ọ́fíìsì INEC tó súnmọ́ ọ kí ọjọ́ ìkẹyìn tó dé.", "Ní ọjọ́ ìdìbò, wá àmì NDC àti Adejoke Aderemi-Adewole.", "Tẹ ìka rẹ lẹ́bàá orúkọ rẹ̀. Ó parí."],
+      look: "Wá", party: "NDC · Adejoke Aderemi-Adewole", logo: "Àyè: àmì ẹgbẹ́ NDC òṣìṣẹ́", thumb: "Tẹ ìka síbí" },
+    join: { title: "Dárapọ̀ mọ́ ìpolongo náà — ìṣẹ́jú àáyá 30 péré ni.", sub: "Àwọn àlàyé rẹ yóò lọ tààrà sí ẹgbẹ́ ward rẹ. A kì í pa àkọsílẹ̀ mọ́ láìsí ìfọwọ́sí rẹ.",
+      name: "Orúkọ", phone: "Nọ́mbà fóònù", ward: "Ward rẹ", wardph: "Yan ward rẹ",
+      consent: "Mo gbà pé kí a kàn sí mi nípasẹ̀ fóònù tàbí WhatsApp nípa ẹ̀kọ́ ìdìbò, ìrànlọ́wọ́ Káàdì Ìdìbò, àti ìránnilétí ìdìbò.",
+      ok: "O ti wọlé. Káàbọ̀ sí ìpolongo náà!", okSub: "Ẹgbẹ́ ward rẹ yóò kàn sí ọ lórí WhatsApp láìpẹ́." },
+    report: { eyebrow: "Ìròyìn padà", title: "Ẹ̀rí, kì í ṣe ìlérí lásán.",
+      stats: [ { n: 8, suf: "", cap: "Ward" }, { n: 1240, suf: "+", cap: "Káàdì Ìdìbò tí a ṣèrànwọ́" }, { n: 320, suf: "+", cap: "Olùyọ̀ǹda" } ],
+      updates: [
+        { tag: "Ìbẹ̀wò ìfetísílẹ̀", t: "Ìpàdé pẹ̀lú àwọn obìnrin ọjà Imota lórí ìṣàn omi." },
+        { tag: "Ìfarajìn", t: "A tẹ ìlérí jíhìn ọjọ́ 90 àkọ́kọ́ wa jáde." },
+        { tag: "Ẹgbẹ́ ward", t: "Àwọn ẹgbẹ́ WhatsApp Igbogbo-Baiyeku ti ń ṣiṣẹ́ báyìí." },
+      ] },
+    donate: { title: "Ṣètìlẹ́yìn fún ìpolongo tí àwọn ènìyàn ń náwó fún.", sub: "À ń jèrè ìbò — a kì í rà á. Gbogbo náírà ni a lè jíhìn rẹ̀, nínú ààlà òfin." },
+    final: { title: "Àdúgbò wa, ohùn wa, Ilé wa.", sub: "Gba Káàdì Ìdìbò rẹ. Dárapọ̀ mọ́ ward rẹ. Ẹ jẹ́ kí a mú aṣojú Triple-A wá sí Ikorodu II." },
+    foot: { tagline: "Wíwọlé. Jíjẹ́rìí. Ní Ìṣe.", contact: "Ìkànsí", office: "Ọ́fíìsì agbègbè, Ikorodu II", links: "Ìpolongo", legal: "Àṣírí & Ìfọwọ́sí",
+      note: "INEC nìkan ló ń forúkọ àwọn olùdìbò; ìpolongo náà ń ṣèrànwọ́ nìkan. A kì í gba nọ́mbà Káàdì Ìdìbò tàbí VIN lórí ayélujára. Ajoke4House ló san owó rẹ̀. · ajokeadremi.com", lang: "Èdè" },
+  },
+};
+
+window.STRINGS = STRINGS;

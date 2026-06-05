@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ajoke4House — Choose a Direction</title>
+<link rel="icon" href="assets/aaa_favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background: #11201A; color: #fff;
+    -webkit-font-smoothing: antialiased; padding: 28px 20px 56px; }
+  .head { max-width: 1180px; margin: 0 auto 26px; }
+  .head .lockup { display: flex; align-items: center; gap: 12px; }
+  .head .lockup img { height: 34px; }
+  .head .lockup b { font-weight: 800; font-size: 18px; letter-spacing: -.01em; }
+  .head h1 { font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 800; letter-spacing: -.02em; margin: 18px 0 6px; }
+  .head p { margin: 0; color: rgba(255,255,255,.62); font-size: 15.5px; max-width: 62ch; line-height: 1.5; }
+  .head .hint { margin-top: 14px; font-size: 13.5px; color: rgba(255,255,255,.5); display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); padding: 8px 14px; border-radius: 999px; }
+
+  .grid { max-width: 1280px; margin: 0 auto; display: grid; gap: 24px; grid-template-columns: 1fr; }
+  @media (min-width: 820px) { .grid { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+
+  .col { display: flex; flex-direction: column; gap: 14px; }
+  .card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 18px; padding: 18px; }
+  .tag { display: inline-flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; color: rgba(255,255,255,.55); }
+  .dot { width: 14px; height: 14px; border-radius: 50%; flex: none; }
+  .d-movement { background: #0B6B3A; box-shadow: 0 0 0 3px rgba(11,107,58,.3); }
+  .d-lagos { background: #FCC200; box-shadow: 0 0 0 3px rgba(252,194,0,.3); }
+  .d-accountable { background: #0E2A47; box-shadow: 0 0 0 3px rgba(14,42,71,.4); }
+  .card h2 { margin: 10px 0 6px; font-size: 20px; font-weight: 800; letter-spacing: -.01em; }
+  .card p { margin: 0; font-size: 13.5px; line-height: 1.5; color: rgba(255,255,255,.6); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .chip { font-size: 11px; font-weight: 600; padding: 4px 9px; border-radius: 999px; background: rgba(255,255,255,.08); color: rgba(255,255,255,.7); }
+  .btnrow { margin-top: 14px; }
+  .open { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 700; color: #fff;
+    text-decoration: none; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16); padding: 9px 14px; border-radius: 10px; transition: background .15s; }
+  .open:hover { background: rgba(255,255,255,.2); }
+
+  .phone { position: relative; background: #000; border-radius: 30px; padding: 10px; box-shadow: 0 30px 60px rgba(0,0,0,.5); }
+  .phone::before { content: ""; position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
+    width: 92px; height: 6px; background: rgba(255,255,255,.18); border-radius: 999px; z-index: 2; }
+  .screen { border-radius: 22px; overflow: hidden; background: #fff; height: 640px; }
+  .screen iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .foot { max-width: 1180px; margin: 36px auto 0; color: rgba(255,255,255,.4); font-size: 12.5px; text-align: center; }
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="lockup"><img src="assets/aaa_mark_reversed.svg" alt=""><b>Ajoke4House</b></div>
+    <h1>Choose a direction.</h1>
+    <p>Same content, same structure, three different souls — built to the campaign brief. Scroll any phone to explore the full homepage. Each runs live; tap “Open full” to interact with one on its own (working Join form, language toggle, sticky bar).</p>
+    <div class="hint">Tip — every phone is the real homepage, just locked to one brand direction.</div>
+  </div>
+
+  <div class="grid">
+    <!-- A -->
+    <div class="col">
+      <div class="card">
+        <span class="tag"><span class="dot d-movement"></span>Variant A</span>
+        <h2>The Movement</h2>
+        <p>Hopeful, modern, presidential — the safe, broadly-appealing choice. Ikorodu green + warm gold, clean geometric sans.</p>
+        <div class="chips"><span class="chip">Plus Jakarta Sans</span><span class="chip">Green / Gold</span><span class="chip">Obama · Peter Obi</span></div>
+        <div class="btnrow"><a class="open" href="index.html?theme=movement" target="_blank" rel="noopener">Open full ↗</a></div>
+      </div>
+      <div class="phone"><div class="screen"><iframe src="index.html?theme=movement&chrome=0" title="Movement"></iframe></div></div>
+    </div>
+
+    <!-- B -->
+    <div class="col">
+      <div class="card">
+        <span class="tag"><span class="dot d-lagos"></span>Variant B</span>
+        <h2>Lagos Vernacular</h2>
+        <p>Bold, joyful, unmistakably local — the distinctive, turnout-driving choice. Danfo-yellow + ink + Ankara accents, sign-painter headlines.</p>
+        <div class="chips"><span class="chip">Bungee poster</span><span class="chip">Yellow / Ink</span><span class="chip">Mamdani-style</span></div>
+        <div class="btnrow"><a class="open" href="index.html?theme=lagos" target="_blank" rel="noopener">Open full ↗</a></div>
+      </div>
+      <div class="phone"><div class="screen"><iframe src="index.html?theme=lagos&chrome=0" title="Lagos Vernacular"></iframe></div></div>
+    </div>
+
+    <!-- C -->
+    <div class="col">
+      <div class="card">
+        <span class="tag"><span class="dot d-accountable"></span>Variant C</span>
+        <h2>The Accountable</h2>
+        <p>Crisp, trustworthy, receipts-forward — the “she means business” choice. Ink navy + emerald, warm editorial serif headlines.</p>
+        <div class="chips"><span class="chip">Fraunces serif</span><span class="chip">Navy / Emerald</span><span class="chip">Technocratic</span></div>
+        <div class="btnrow"><a class="open" href="index.html?theme=accountable" target="_blank" rel="noopener">Open full ↗</a></div>
+      </div>
+      <div class="phone"><div class="screen"><iframe src="index.html?theme=accountable&chrome=0" title="The Accountable"></iframe></div></div>
+    </div>
+  </div>
+
+  <div class="foot">Ajoke4House Design System · pick one and I’ll polish it to production fidelity.</div>
+</body>
+</html>

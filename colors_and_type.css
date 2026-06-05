@@ -1,0 +1,308 @@
+/* ============================================================================
+   AJOKE4HOUSE — Colours & Type Foundation
+   Campaign brand system for Adejoke "Ajoke" Aderemi-Adewole · NDC
+   Lagos State House of Assembly · Ikorodu Constituency II · 2027
+   ----------------------------------------------------------------------------
+   The brand ships THREE art directions ("souls") over one shared foundation:
+     · data-theme="movement"      — hopeful, modern, presidential (DEFAULT)
+     · data-theme="lagos"         — bold, joyful, unmistakably local
+     · data-theme="accountable"   — crisp, editorial, receipts-forward
+   Set the theme on <html> or any wrapper:  <html data-theme="movement">
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Bungee&display=swap');
+
+/* ----------------------------------------------------------------------------
+   1. BASE TOKENS  (shared across all three themes)
+   ---------------------------------------------------------------------------- */
+:root {
+  /* Font families — substitutes for any unavailable brand faces (see README) */
+  --font-sans:    'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif:   'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-poster:  'Bungee', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono:    ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Neutrals (warm grey ramp — reads friendly, not clinical) */
+  --ink-900: #14201A;
+  --ink-800: #1F2A24;
+  --ink-700: #2E3A33;
+  --ink-600: #45524B;
+  --ink-500: #5E6B63;
+  --ink-400: #828E87;
+  --ink-300: #AAB4AE;
+  --ink-200: #D2D9D5;
+  --ink-150: #E4E9E6;
+  --ink-100: #EFF2F0;
+  --ink-050: #F7F9F8;
+  --white:   #FFFFFF;
+
+  /* Channel & status colours (shared everywhere) */
+  --whatsapp:      #25D366;
+  --whatsapp-ink:  #128C7E;
+  --success:       #1F8A5B;
+  --warning:       #E0A800;
+  --danger:        #C0362C;
+  --info:          #2A6FDB;
+
+  /* Spacing scale (4pt base) */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Radii */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   18px;
+  --radius-xl:   28px;
+  --radius-pill: 999px;
+
+  /* Elevation — soft, warm-tinted shadows (never harsh black) */
+  --shadow-xs: 0 1px 2px rgba(20, 32, 26, 0.06);
+  --shadow-sm: 0 2px 8px rgba(20, 32, 26, 0.08);
+  --shadow-md: 0 8px 24px rgba(20, 32, 26, 0.10);
+  --shadow-lg: 0 18px 48px rgba(20, 32, 26, 0.14);
+
+  /* Hairline borders */
+  --border-hair: 1px solid var(--ink-150);
+  --border-soft: 1px solid var(--ink-200);
+
+  /* Motion — crisp but data-light. Snappy, never floaty. */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in:    cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:   140ms;
+  --dur-base:   240ms;
+  --dur-slow:   420ms;
+
+  /* Layout */
+  --maxw-page:    1120px;
+  --maxw-prose:   680px;
+  --maxw-phone:   430px;   /* mobile-first canvas */
+  --tap-min:      44px;    /* WCAG AA tap target */
+
+  /* ----- Type scale (mobile-first; clamp scales up to desktop) ----- */
+  --fs-display: clamp(2.6rem, 7vw + 1rem, 4.5rem);
+  --fs-h1:      clamp(2.0rem, 5vw + 0.6rem, 3.25rem);
+  --fs-h2:      clamp(1.6rem, 3.2vw + 0.6rem, 2.4rem);
+  --fs-h3:      clamp(1.3rem, 2vw + 0.5rem, 1.7rem);
+  --fs-h4:      clamp(1.12rem, 1vw + 0.6rem, 1.3rem);
+  --fs-lead:    clamp(1.12rem, 1vw + 0.7rem, 1.35rem);
+  --fs-body:    1.0625rem;   /* 17px — legible at arm's length */
+  --fs-small:   0.9375rem;   /* 15px */
+  --fs-micro:   0.8125rem;   /* 13px — labels, legal */
+  --fs-eyebrow: 0.78rem;
+
+  --lh-tight: 1.05;
+  --lh-snug:  1.2;
+  --lh-base:  1.55;
+  --lh-loose: 1.7;
+
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.08em;
+  --tracking-eyebrow: 0.16em;
+}
+
+/* ----------------------------------------------------------------------------
+   2. THEME PALETTES
+   Each theme remaps the same semantic slots so components stay identical.
+   ---------------------------------------------------------------------------- */
+
+/* --- A · THE MOVEMENT (default): Ikorodu green + warm gold ---------------- */
+:root,
+[data-theme="movement"] {
+  --brand:        #0B6B3A;   /* Ikorodu green — primary */
+  --brand-strong: #084E2A;
+  --brand-soft:   #E7F1EB;
+  --brand-tint:   #F2F8F4;
+  --accent:       #F2B807;   /* warm gold — the "AAA rating" peak */
+  --accent-strong:#D89B00;
+  --accent-soft:  #FDF2CC;
+  --on-brand:     #FFFFFF;
+  --on-accent:    #14201A;
+
+  --bg:        #FFFFFF;
+  --bg-alt:    #F7F9F8;
+  --surface:   #FFFFFF;
+  --surface-2: #F2F8F4;
+  --fg:        var(--ink-900);
+  --fg-muted:  var(--ink-500);
+  --fg-subtle: var(--ink-400);
+  --line:      var(--ink-150);
+  --line-strong: var(--ink-200);
+
+  --hero-bg:   #0B6B3A;
+  --hero-fg:   #FFFFFF;
+
+  --display-family: var(--font-sans);
+  --h-family:       var(--font-sans);
+  --body-family:    var(--font-sans);
+  --display-weight: 800;
+  --h-weight:       700;
+  --display-tracking: var(--tracking-tight);
+  --display-transform: none;
+}
+
+/* --- B · LAGOS VERNACULAR: danfo-yellow + ink + Ankara magenta ----------- */
+[data-theme="lagos"] {
+  --brand:        #FCC200;   /* danfo yellow */
+  --brand-strong: #E0A800;
+  --brand-soft:   #FFF1BF;
+  --brand-tint:   #FFF8E6;
+  --accent:       #D81E5B;   /* Ankara magenta */
+  --accent-strong:#B01049;
+  --accent-soft:  #FBD9E4;
+  --accent-2:     #00A3A3;   /* Ankara teal (secondary pop) */
+  --on-brand:     #111111;
+  --on-accent:    #FFFFFF;
+
+  --bg:        #FFF8E6;      /* warm off-white */
+  --bg-alt:    #FFFFFF;
+  --surface:   #FFFFFF;
+  --surface-2: #FBEECA;      /* warm light secondary surface */
+  --fg:        #111111;
+  --fg-muted:  #4A4636;
+  --fg-subtle: #6E6A58;
+  --line:      #E8DFC4;
+  --line-strong: #111111;
+
+  --hero-bg:   #FCC200;
+  --hero-fg:   #111111;
+
+  --display-family: var(--font-poster);
+  --h-family:       var(--font-poster);
+  --body-family:    var(--font-body);
+  --display-weight: 400;
+  --h-weight:       400;
+  --display-tracking: 0.005em;
+  --display-transform: uppercase;
+}
+
+/* --- C · THE ACCOUNTABLE: ink navy + editorial serif + emerald ----------- */
+[data-theme="accountable"] {
+  --brand:        #0E2A47;   /* ink navy */
+  --brand-strong: #081B30;
+  --brand-soft:   #E7EDF4;
+  --brand-tint:   #F2F6FA;
+  --accent:       #1F8A70;   /* emerald */
+  --accent-strong:#156B56;
+  --accent-soft:  #D7EFE7;
+  --on-brand:     #FFFFFF;
+  --on-accent:    #FFFFFF;
+
+  --bg:        #FFFFFF;
+  --bg-alt:    #F4F7FA;
+  --surface:   #FFFFFF;
+  --surface-2: #F2F6FA;
+  --fg:        #0E2A47;
+  --fg-muted:  #4B5A6B;
+  --fg-subtle: #76838F;
+  --line:      #DCE5EE;
+  --line-strong: #C3D0DD;
+
+  --hero-bg:   #0E2A47;
+  --hero-fg:   #FFFFFF;
+
+  --display-family: var(--font-serif);
+  --h-family:       var(--font-serif);
+  --body-family:    var(--font-body);
+  --display-weight: 600;
+  --h-weight:       600;
+  --display-tracking: var(--tracking-tight);
+  --display-transform: none;
+}
+
+/* ----------------------------------------------------------------------------
+   3. SEMANTIC TYPE PRIMITIVES
+   Apply via utility classes or copy the declarations into component CSS.
+   ---------------------------------------------------------------------------- */
+.t-eyebrow {
+  font-family: var(--body-family);
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+.t-display {
+  font-family: var(--display-family);
+  font-size: var(--fs-display);
+  font-weight: var(--display-weight);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--display-tracking);
+  text-transform: var(--display-transform);
+  text-wrap: balance;
+}
+.t-h1 {
+  font-family: var(--h-family);
+  font-size: var(--fs-h1);
+  font-weight: var(--h-weight);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--display-tracking);
+  text-wrap: balance;
+}
+.t-h2 {
+  font-family: var(--h-family);
+  font-size: var(--fs-h2);
+  font-weight: var(--h-weight);
+  line-height: var(--lh-snug);
+  text-wrap: balance;
+}
+.t-h3 {
+  font-family: var(--h-family);
+  font-size: var(--fs-h3);
+  font-weight: var(--h-weight);
+  line-height: var(--lh-snug);
+}
+.t-h4 {
+  font-family: var(--body-family);
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  line-height: var(--lh-snug);
+}
+.t-lead {
+  font-family: var(--body-family);
+  font-size: var(--fs-lead);
+  font-weight: 400;
+  line-height: var(--lh-base);
+  color: var(--fg-muted);
+}
+.t-body {
+  font-family: var(--body-family);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: var(--lh-base);
+  color: var(--fg);
+}
+.t-small {
+  font-family: var(--body-family);
+  font-size: var(--fs-small);
+  line-height: var(--lh-base);
+  color: var(--fg-muted);
+}
+.t-micro {
+  font-family: var(--body-family);
+  font-size: var(--fs-micro);
+  line-height: var(--lh-base);
+  color: var(--fg-subtle);
+}
+
+/* Reduced-motion: honour the system preference everywhere */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
