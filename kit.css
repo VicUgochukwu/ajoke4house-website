@@ -239,12 +239,14 @@
 @media (min-width: 820px) { .join { padding: 40px; } }
 .join h2 { color: var(--on-brand); }
 .join-card { background: var(--surface); color: var(--fg); border-radius: var(--radius-lg); padding: 22px; margin-top: 20px; }
-.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; min-width: 0; }
 .field label { font-size: 13px; font-weight: 700; color: var(--fg); }
 .field input, .field select { height: 48px; border: 1.5px solid var(--line-strong); border-radius: var(--radius-md);
-  padding: 0 14px; font-size: 16px; font-family: var(--body-family); color: var(--fg); background: var(--surface); transition: border-color var(--dur-fast), box-shadow var(--dur-fast); }
+  padding: 0 14px; font-size: 16px; font-family: var(--body-family); color: var(--fg); background: var(--surface); transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+  width: 100%; min-width: 0; max-width: 100%; box-sizing: border-box; }
 .field input:focus, .field select:focus { outline: 0; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft); }
-.field-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.field-2 { display: grid; grid-template-columns: 1fr; gap: 14px; }
+@media (min-width: 520px) { .field-2 { grid-template-columns: 1fr 1fr; } }
 .consent { display: flex; gap: 10px; align-items: flex-start; margin: 6px 0 16px; }
 .consent input { width: 22px; height: 22px; margin-top: 1px; accent-color: var(--brand); flex: none; }
 .consent label { font-size: 13.5px; color: var(--fg-muted); line-height: 1.45; }
